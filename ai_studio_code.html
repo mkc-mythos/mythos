@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythos AI Studio | Your Photos Into Video</title>
+    
+    <!-- Tailwind CSS for Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#020617',      // very dark background
+                            primary: '#ec4899',   // hot pink
+                            accent: '#22d3ee',    // bright cyan
+                            light: '#f9fafb',     // soft light
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background:
+                radial-gradient(circle at top left, #22d3ee 0%, transparent 40%),
+                radial-gradient(circle at bottom right, #ec4899 0%, transparent 45%),
+                linear-gradient(to bottom right, #020617, #1e293b);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ec4899; 
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-100 bg-brand-dark">
+
+    <!-- NAVIGATION -->
+    <nav class="bg-black/60 backdrop-blur-md shadow-md fixed w-full z-50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-film text-brand-accent text-2xl mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight text-white">Mythos AI Studio</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="#how-it-works" class="text-gray-300 hover:text-brand-accent transition">How it Works</a>
+                    <a href="#store" class="text-gray-300 hover:text-brand-accent transition">Store</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-brand-accent transition">Pricing</a>
+                    <a href="#delivery" class="text-gray-300 hover:text-brand-accent transition">Delivery</a>
+                    <a href="#faq" class="text-gray-300 hover:text-brand-accent transition">FAQ</a>
+                    <a href="#contact" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold hover:bg-pink-500 transition shadow-lg">
+                        Start Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-white/10 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#how-it-works" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5">How it Works</a>
+                <a href="#store" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5">Store</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5">Pricing</a>
+                <a href="#delivery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5">Delivery</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5">FAQ</a>
+                <a href="#contact" class="block px-3 py-2 mt-2 text-center rounded-md text-base font-bold bg-brand-primary text-white hover:bg-pink-500">
+                    Start Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-bg text-white pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block bg-white/10 text-brand-accent px-4 py-1 rounded-full text-xs md:text-sm font-semibold mb-6 border border-brand-accent/60">
+                ✨ Done-for-you AI video & image studio for India
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Turn Your Photos into Video.<br>
+                <span class="text-brand-accent">Normal Delivery in 2–3 Days.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-6 max-w-2xl mx-auto">
+                You send the images. We create stylish 2D or 3D-style videos and custom visuals for birthdays, reels,
+                brands and products. No software, no headache.
+            </p>
+            <p class="text-sm md:text-base text-brand-accent mb-10">
+                Need it urgent? <span class="font-semibold">24-hour express video delivery</span> available on select templates.
+                <br>Image templates in 1 day. Custom image concepts in <span class="font-semibold">1–3 days</span> (depending on complexity).
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#store" class="bg-brand-accent text-brand-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-cyan-300 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Browse Template Store
+                </a>
+            </div>
+            <p class="mt-6 text-xs md:text-sm text-gray-300">
+                Custom videos (short or long) and character concepts: contact us on 
+                <span class="font-semibold text-brand-accent">+91 91767 77147</span>. 
+                WhatsApp us and we’ll get back to you soon.
+            </p>
+        </div>
+    </header>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">How It Works</h2>
+                <p class="text-gray-400 mt-2 text-sm md:text-base">Simple service. You send content, we handle the AI and editing.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10 text-center">
+                <!-- Step 1 -->
+                <div class="p-6 rounded-xl border border-white/10 bg-gray-900 shadow-sm hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-brand-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-accent text-2xl">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">1. Pick a Style</h3>
+                    <p class="text-gray-300 text-sm">
+                        Choose a template for product videos, reels, visual effects or tell us your custom idea.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-6 rounded-xl border border-white/10 bg-gray-900 shadow-sm hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-brand-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-accent text-2xl">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">2. Send Photos & Details</h3>
+                    <p class="text-gray-300 text-sm">
+                        Upload your images, product shots, references and text. 
+                        We create videos and also product images with different angles and pricing layouts.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="p-6 rounded-xl border border-white/10 bg-gray-900 shadow-sm hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-brand-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-accent text-2xl">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">3. Get Your Final Output</h3>
+                    <p class="text-gray-300 text-sm">
+                        Videos: normally delivered in 2–3 days per clip (24h express available). 
+                        Images: template-style in 1 day, custom concepts in <span class="font-semibold text-brand-accent">1–3 days</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEMPLATE STORE -->
+    <section id="store" class="py-20 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Template Store</h2>
+                <p class="text-gray-400 mt-2 text-sm md:text-base">
+                    Product videos, social reels and visual effects templates – all at a price that is usually 
+                    <span class="text-brand-accent font-semibold">5–10× lower</span> than typical studio rates.
+                    We also create product image packs: multiple angles, close-ups and pricing images.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Template 1: Product Promo FIRST -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-white/10">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-brand-primary opacity-70"></div>
+                        <span class="relative z-10 text-white font-bold text-lg">Product Promo Hero</span>
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition backdrop-blur-sm">
+                            <i class="fa-solid fa-play text-white text-4xl hover:scale-110 transition transform"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg text-white">Product Promo Hero</h3>
+                            <span class="bg-green-500/20 text-green-300 text-xs font-bold px-2 py-1 rounded">Best for Business</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-4">
+                            Clean, focused product video. We show different angles, close-up details and pricing shots 
+                            for each product. Perfect for ads, websites and marketplaces.
+                        </p>
+                        <a href="#contact" class="block text-center w-full border-2 border-brand-accent text-brand-accent font-semibold py-2 rounded hover:bg-brand-accent hover:text-brand-dark transition">
+                            Use This Style / Customise
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-white/10">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-orange-400 opacity-70"></div>
+                        <span class="relative z-10 text-white font-bold text-lg">Reel / TikTok Trend</span>
+                         <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition backdrop-blur-sm">
+                            <i class="fa-solid fa-play text-white text-4xl hover:scale-110 transition transform"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg text-white">Instagram / TikTok Reel</h3>
+                            <span class="bg-purple-500/20 text-purple-300 text-xs font-bold px-2 py-1 rounded">Trending</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-4">Vertical reel style with fast cuts and smooth transitions. Ideal for Insta Reels, TikTok, YouTube Shorts.</p>
+                        <a href="#contact" class="block text-center w-full border-2 border-brand-accent text-brand-accent font-semibold py-2 rounded hover:bg-brand-accent hover:text-brand-dark transition">Use This Style / Customise</a>
+                    </div>
+                </div>
+
+                 <!-- Template 3 -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-white/10">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-brand-accent opacity-70"></div>
+                        <span class="relative z-10 text-white font-bold text-lg">VFX & Gaming Edit</span>
+                         <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition backdrop-blur-sm">
+                            <i class="fa-solid fa-play text-white text-4xl hover:scale-110 transition transform"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg text-white">VFX & Gaming Style</h3>
+                            <span class="bg-cyan-500/20 text-cyan-300 text-xs font-bold px-2 py-1 rounded">Visual Effects</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-4">Fast, high-energy edits with visual effects like bullet hits, splash, glitch and gaming-style cuts.</p>
+                        <a href="#contact" class="block text-center w-full border-2 border-brand-accent text-brand-accent font-semibold py-2 rounded hover:bg-brand-accent hover:text-brand-dark transition">Use This Style / Customise</a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-10 max-w-3xl mx-auto text-center text-gray-400 text-xs md:text-sm">
+                <p>
+                    We can also deliver product-only image packs: front, side and top angles, macro close-ups, 
+                    and clean pricing images for each product – ready for your website, catalog or social posts.
+                    Bulk discounts available for 10+ products or videos. Many more templates are available – WhatsApp us and we’ll suggest the best one.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-20 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-4">
+                <h2 class="text-3xl font-bold">Simple Pricing</h2>
+                <p class="text-gray-400 mt-2 text-sm md:text-base">
+                    Separate pricing for image generation and video creation. Pick what you need.
+                </p>
+            </div>
+
+            <div class="text-center mb-10">
+                <div class="inline-block bg-gray-900/80 border border-brand-accent/60 px-4 py-2 rounded-full text-xs md:text-sm text-gray-200">
+                    Most studios charge <span class="text-brand-accent font-semibold">5–10× more</span> for similar AI video & product image work.
+                    Our launch pricing starts at just <span class="font-semibold">₹199</span>.
+                </div>
+            </div>
+
+            <!-- Category A: Image Generation -->
+            <div class="mb-10">
+                <h3 class="text-center text-xl font-semibold mb-6">Category A – Image Generation</h3>
+                <div class="max-w-xl mx-auto">
+                    <div class="bg-gray-900/80 border border-white/10 p-8 rounded-2xl hover:border-brand-accent/70 transition">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-lg font-semibold text-white flex items-center">
+                                <i class="fa-solid fa-image text-brand-accent mr-2"></i> Image Packs & Concepts
+                            </h4>
+                        </div>
+                        <div class="mb-4 text-sm text-gray-200 space-y-1">
+                            <p><span class="font-semibold text-brand-accent">Templates from ₹199</span> – simple image sets, usually delivered in 1 day.</p>
+                            <p><span class="font-semibold text-brand-accent">Custom concepts from ₹299</span> – more creative / styled ideas, delivered in 1–3 days.</p>
+                        </div>
+                        <ul class="text-gray-300 space-y-2 mb-6 text-sm">
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Product angles (front, side, top, detail shots)</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Pricing images / offer cards</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Food menu or product menu layouts</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Social media ready exports</li>
+                        </ul>
+                        <a href="#contact" class="block text-center w-full bg-brand-primary text-white py-3 rounded-lg font-semibold hover:bg-pink-500 transition">
+                            Order Image Pack
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category B: Video Creation -->
+            <div>
+                <h3 class="text-center text-xl font-semibold mb-6">Category B – Video Creation</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Basic -->
+                    <div class="bg-gray-900/70 border border-white/10 p-8 rounded-2xl hover:border-brand-accent/70 transition">
+                        <h3 class="text-xl font-semibold text-gray-100">Basic</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-bold">₹299</span>
+                        </div>
+                        <ul class="text-gray-300 space-y-3 mb-8 text-sm">
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> 1 video output (short clip)</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Simple edit from your photos</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Normal delivery: 2–3 days</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Standard background music</li>
+                        </ul>
+                        <a href="#contact" class="block text-center w-full bg-brand-primary text-white py-3 rounded-lg font-semibold hover:bg-pink-500 transition">
+                            Order Basic Video
+                        </a>
+                    </div>
+
+                    <!-- Fast -->
+                    <div class="bg-gray-900 border-2 border-brand-accent p-8 rounded-2xl relative transform md:-translate-y-4 shadow-2xl">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-brand-dark px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                            24-Hour Express
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Fast Track</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-bold">₹499</span>
+                        </div>
+                        <ul class="text-gray-200 space-y-3 mb-8 text-sm">
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> 1 video output (short or medium clip)</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Higher priority editing</li>
+                            <li><i class="fa-solid fa-bolt text-yellow-400 mr-2"></i> <strong>24-hour delivery (subject to slot)</strong></li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Premium music selection</li>
+                        </ul>
+                        <a href="#contact" class="block text-center w-full bg-brand-accent text-brand-dark py-3 rounded-lg font-bold hover:bg-cyan-300 transition">
+                            Order Fast Track Video
+                        </a>
+                    </div>
+
+                    <!-- Premium -->
+                    <div class="bg-gray-900/70 border border-white/10 p-8 rounded-2xl hover:border-brand-accent/70 transition">
+                        <h3 class="text-xl font-semibold text-gray-100">Premium / Business</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-bold">₹899+</span>
+                        </div>
+                        <ul class="text-gray-300 space-y-3 mb-8 text-sm">
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Custom clips and complex edits</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Product / brand / character concepts</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Normal delivery: 2–3 days (per video)</li>
+                            <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> 24-hour express or larger projects via custom quote</li>
+                        </ul>
+                        <a href="#contact" class="block text-center w-full bg-brand-primary text-white py-3 rounded-lg font-semibold hover:bg-pink-500 transition">
+                            Discuss Premium Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 text-center text-xs md:text-sm text-gray-400">
+                For custom videos (short or long), multiple products or a full catalog, 
+                we offer extra discounts for volume. 
+                Call or WhatsApp <span class="text-brand-accent font-semibold">+91 91767 77147</span> to discuss.
+            </p>
+        </div>
+    </section>
+
+    <!-- DELIVERY DETAILS -->
+    <section id="delivery" class="py-16 bg-gray-950 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-6 text-center">Delivery Times – Clear & Simple</h2>
+            <p class="text-gray-300 text-sm md:text-base text-center max-w-3xl mx-auto mb-10">
+                Different work takes different time. We keep it transparent so you know what to expect.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-gray-900/70 border border-white/10 rounded-2xl p-6">
+                    <h3 class="font-semibold text-xl mb-3 flex items-center">
+                        <i class="fa-solid fa-film text-brand-accent mr-2"></i> Video Projects
+                    </h3>
+                    <ul class="text-gray-300 text-sm space-y-2">
+                        <li>• Normal video delivery: <span class="font-semibold text-brand-accent">2–3 days per video</span></li>
+                        <li>• 24-hour express delivery: available for selected templates and shorter clips (Fast Track).</li>
+                        <li>• Custom videos (short or long): timeline depends on story, scenes, characters and style.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-900/70 border border-white/10 rounded-2xl p-6">
+                    <h3 class="font-semibold text-xl mb-3 flex items-center">
+                        <i class="fa-solid fa-image text-brand-accent mr-2"></i> Image Projects
+                    </h3>
+                    <ul class="text-gray-300 text-sm space-y-2">
+                        <li>• Template-style images (product angles, simple packs): usually delivered within <span class="font-semibold text-brand-accent">1 day</span>.</li>
+                        <li>• Custom concepts, menus or larger sets: around <span class="font-semibold text-brand-accent">1–3 days</span> depending on complexity.</li>
+                        <li>• Complex sets (many variations / style explorations): we confirm delivery along with the quote.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-center text-xs md:text-sm text-gray-400">
+                Have a deadline or event date? Mention it in the form or call us directly on 
+                <span class="text-brand-accent font-semibold">+91 91767 77147</span> and we’ll tell you what’s realistically possible.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="py-20 bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-gray-950 rounded-3xl p-8 md:p-12 shadow-inner border border-white/10">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-white">Start Your Order / Custom Project</h2>
+                    <p class="text-gray-300 mt-2 text-sm md:text-base">
+                        Tell us what you want – product video, reel, visual effects edit, or image pack.
+                        We’ll reply with next steps, timeline and price.
+                    </p>
+                    <p class="mt-4 text-xs md:text-sm text-brand-accent">
+                        Prefer direct chat? Call or WhatsApp: <span class="font-semibold">+91 91767 77147</span>. 
+                    </p>
+                </div>
+
+                <form class="space-y-6" onsubmit="event.preventDefault();">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-200 mb-2">Your Name</label>
+                            <input type="text" id="custName" class="w-full px-4 py-3 rounded-lg border border-white/10 bg-black/40 text-gray-100 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
+                            <input type="email" id="custEmail" class="w-full px-4 py-3 rounded-lg border border-white/10 bg-black/40 text-gray-100 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-200 mb-2">What are you looking for?</label>
+                        <select id="custService" class="w-full px-4 py-3 rounded-lg border border-white/10 bg-black/40 text-gray-100 focus:ring-2 focus:ring-brand-accent outline-none">
+                            <option>Image Pack (Cat A - ₹199)</option>
+                            <option>Basic Video (Cat B - ₹299)</option>
+                            <option>Fast Track Video (Cat B - ₹499)</option>
+                            <option>Premium / Custom Project</option>
+                            <option>Bulk Order (Quote)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-200 mb-2">Project details</label>
+                        <textarea id="custDetails" rows="4" class="w-full px-4 py-3 rounded-lg border border-white/10 bg-black/40 text-gray-100 focus:ring-2 focus:ring-brand-accent outline-none" placeholder="Explain the concept, product, required angles, approximate video length or number of images, event date, and any references."></textarea>
+                    </div>
+
+                    <!-- File Upload Placeholder -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-200 mb-2">Upload Reference Photos (Optional)</label>
+                        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-white/20 rounded-lg hover:border-brand-accent transition cursor-pointer bg-black/40">
+                            <div class="space-y-1 text-center">
+                                <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-400"></i>
+                                <div class="flex text-sm text-gray-300 justify-center">
+                                    <span class="relative cursor-pointer bg-black/0 rounded-md font-medium text-brand-accent hover:text-cyan-300">
+                                        Upload a file
+                                    </span>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs text-gray-400">We will request files on WhatsApp after you click submit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="sendToWhatsapp()" class="w-full bg-brand-primary text-white font-bold py-4 rounded-lg hover:bg-pink-500 transition shadow-lg transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                         <i class="fa-brands fa-whatsapp text-xl"></i> Submit Request via WhatsApp
+                    </button>
+                    <p class="text-xs text-center text-gray-400 mt-4">
+                        <i class="fa-solid fa-lock mr-1"></i> Your photos and generated images are used only for your project and removed after delivery.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-gray-950">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white text-center mb-10">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <details class="group bg-gray-900 p-5 rounded-lg cursor-pointer shadow-sm border border-white/10">
+                    <summary class="font-semibold text-gray-100 flex justify-between items-center list-none">
+                        Do I need to know anything about AI tools?
+                        <span class="transition transform group-open:rotate-180 text-brand-accent"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 mt-3 text-sm leading-relaxed">
+                        No. This is not a software you have to learn. It’s a studio service. 
+                        You send us your images and idea; we use AI and editing tools on our side and send you the final video or images.
+                    </p>
+                </details>
+
+                <!-- Q2 -->
+                <details class="group bg-gray-900 p-5 rounded-lg cursor-pointer shadow-sm border border-white/10">
+                    <summary class="font-semibold text-gray-100 flex justify-between items-center list-none">
+                        What are the delivery times?
+                        <span class="transition transform group-open:rotate-180 text-brand-accent"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 mt-3 text-sm leading-relaxed">
+                        For videos: 2–3 days (Normal) or 24 hours (Express). For Image Packs: usually 1 day for templates, 1–3 days for custom concepts.
+                    </p>
+                </details>
+
+                <!-- Q3 -->
+                <details class="group bg-gray-900 p-5 rounded-lg cursor-pointer shadow-sm border border-white/10">
+                    <summary class="font-semibold text-gray-100 flex justify-between items-center list-none">
+                        Can you make custom longer videos too?
+                        <span class="transition transform group-open:rotate-180 text-brand-accent"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 mt-3 text-sm leading-relaxed">
+                        Yes. We can build custom videos, short or long – full story videos, ads, or character-based edits.
+                    </p>
+                </details>
+
+                <!-- Q4 -->
+                <details class="group bg-gray-900 p-5 rounded-lg cursor-pointer shadow-sm border border-white/10">
+                    <summary class="font-semibold text-gray-100 flex justify-between items-center list-none">
+                        What format will I get the final files in?
+                        <span class="transition transform group-open:rotate-180 text-brand-accent"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 mt-3 text-sm leading-relaxed">
+                        For videos: MP4 (9:16 vertical, 1:1 square, or 16:9 horizontal). For images: High-res JPG/PNG.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 py-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center mb-6">
+                <i class="fa-solid fa-film text-brand-accent text-xl mr-2"></i>
+                <span class="font-bold text-white text-lg">Mythos AI Studio</span>
+            </div>
+            <p class="text-sm mb-6 max-w-md mx-auto">
+                Custom AI-assisted videos and product images from your photos. 
+                Built for Indian creators and brands.
+            </p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.instagram.com/mythos_animation" class="hover:text-white transition hover:scale-110"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="https://wa.me/919176777147" class="hover:text-white transition hover:scale-110"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+                <a href="mailto:mkc.mythos@gmail.com" class="hover:text-white transition hover:scale-110" title="Send us an email"><i class="fa-regular fa-envelope text-2xl"></i></a>
+            </div>
+            <div class="text-xs border-t border-white/10 pt-6">
+                &copy; 2025 Mythos AI Studio. All rights reserved. 
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919176777147" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-400 text-white rounded-full shadow-xl px-4 py-3 flex items-center space-x-2 text-sm md:text-base transition hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        <span class="hidden sm:inline font-semibold">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Offer Popup Modal -->
+    <div id="offer-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-40 hidden backdrop-blur-sm">
+        <div class="bg-gray-900 border border-brand-accent/60 rounded-2xl p-6 max-w-sm w-full relative shadow-2xl">
+            <button id="offer-close" class="absolute top-2 right-3 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold text-white mb-2">Launch Offer – Never Before Pricing</h3>
+            <p class="text-gray-300 text-sm mb-3">
+                Most studios charge <span class="text-brand-accent font-semibold">5–10× more</span>.
+                Our pricing starts at just <span class="font-semibold">₹199</span> for image packs.
+            </p>
+            <p class="text-gray-400 text-xs mb-4">
+                Extra discounts for <span class="text-brand-accent font-semibold">10+ videos</span> or multiple products.
+            </p>
+            <a href="https://wa.me/919176777147" class="block w-full text-center bg-brand-accent text-brand-dark font-semibold py-2 rounded-lg hover:bg-cyan-300 transition mb-2">
+                Talk Offers on WhatsApp
+            </a>
+            <button id="offer-later" class="w-full text-center text-gray-400 text-xs hover:text-gray-200 mt-1 underline">
+                Maybe later
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 2. Offer Popup Logic
+        const offerModal = document.getElementById('offer-modal');
+        const offerClose = document.getElementById('offer-close');
+        const offerLater = document.getElementById('offer-later');
+
+        // Show popup after 4 seconds
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (offerModal) {
+                    offerModal.classList.remove('hidden');
+                }
+            }, 4000);
+        });
+
+        function hideOfferModal() {
+            if (offerModal) {
+                offerModal.classList.add('hidden');
+            }
+        }
+
+        if (offerClose) {
+            offerClose.addEventListener('click', hideOfferModal);
+        }
+        if (offerLater) {
+            offerLater.addEventListener('click', hideOfferModal);
+        }
+
+        // 3. WhatsApp Form Logic
+        function sendToWhatsapp() {
+            var name = document.getElementById('custName').value;
+            var email = document.getElementById('custEmail').value;
+            var service = document.getElementById('custService').value;
+            var details = document.getElementById('custDetails').value;
+
+            if(!name) { 
+                alert("Please enter your name"); 
+                return; 
+            }
+
+            var message = "Hello Mythos AI Studio! %0a%0a" + 
+                          "*Name:* " + name + "%0a" +
+                          "*Email:* " + email + "%0a" +
+                          "*Service:* " + service + "%0a" +
+                          "*Details:* " + details;
+
+            var number = "919176777147"; 
+            
+            window.open("https://wa.me/" + number + "?text=" + message, '_blank');
+        }
+    </script>
+
+</body>
+</html>
